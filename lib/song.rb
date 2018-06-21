@@ -13,9 +13,6 @@ class Song
     @@artists << artist
   end
 
-  def self.name
-    @song_name
-  end
 
   def self.count
     @@song_count
