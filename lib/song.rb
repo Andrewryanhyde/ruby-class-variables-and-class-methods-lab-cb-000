@@ -22,13 +22,24 @@ class Song
     @@artists
   end
 
-  def self.genre_count 
+  def self.genre_count
     genres_hash = {}
     @@array.each do |genre|
-      if @@genres_hash.include?(genre) 
+      if @@genres_hash.include?(genre)
         genres_hash[genre] +=1
       else
-        @@genres[genre] = 1
+        genres_hash[genre] = 1
+      end
+    end
+  end
+
+  def self.artist_count
+    artists_hash = {}
+    @@artists.each do |artist|
+      if @@artists_hash.include?(artist)
+        artists_hash[artist] =+ 1
+      else
+        artists_hash = 1
       end
     end
   end
