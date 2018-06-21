@@ -7,6 +7,7 @@ class Song
   def initialize
     @@song_count += 1
     @@genres << :genre
+    @@artists << :artist
   end
 
   def self.count
@@ -19,6 +20,17 @@ class Song
 
   def self.artists
     @@artists
+  end
+
+  def self.genre_count 
+    genres_hash = {}
+    @@array.each do |genre|
+      if @@genres_hash.include?(genre) 
+        genres_hash[genre] +=1
+      else
+        @@genres[genre] = 1
+      end
+    end
   end
 
 
